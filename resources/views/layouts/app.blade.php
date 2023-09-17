@@ -26,19 +26,19 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body class="font-sans antialiased grid grid-col-12" x-data="{open:false}">
+    <body class="grid font-sans antialiased grid-col-12" x-data="{open:false}">
         {{-- <x-banner /> --}}
         <div class="">
             <x-aside></x-aside>
         </div>
 
-        <div class="min-h-screen bg-gray-100 col-start-2 col-end-13 ">
+        <div class="min-h-screen col-start-2 col-end-13 bg-gray-100 ">
             @livewire('navigation-menu')
 
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
                 </header>
@@ -50,7 +50,7 @@
             </main>
         </div>
 
-        <div x-show="open" x-on:click="open = false" class="bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-30 "></div>
+        <div x-show="open" x-on:click="open = false" class="fixed inset-0 z-30 bg-gray-900 bg-opacity-50 dark:bg-opacity-80 "></div>
 
         @stack('modals')
 
