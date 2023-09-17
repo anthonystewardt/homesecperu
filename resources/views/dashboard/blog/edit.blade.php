@@ -6,7 +6,7 @@
 
          <main class="container h-auto mx-auto my-10">
 
-<form action="{{ route('dashboard.blog.edit', $post) }}"  enctype="multipart/form-data" method="POST" class="container w-1/2 mx-auto mb-10" x-data="{ title: '' }">
+            <form action="{{ route('dashboard.blog.edit', $post) }}"  enctype="multipart/form-data" method="POST" class="container w-1/2 mx-auto mb-10" x-data="{ title: '' }">
                 @method("PUT")
                 @csrf
                    <img id="preview" src="#" alt="your image" class="mt-3" style="display:none;"/>
@@ -26,14 +26,6 @@
                         </label>
                     </div>
                 </div>
-                {{-- <div class="mt-5">
-                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Subir una imagen</label>
-                    <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" accept="image/*"  id="selectImage" type="file" onChange="previewImage(event, '#imgPreview')">
-                    <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">Actualizar imagen</p>
-                    @error('image')
-                        <span class="my-2 text-red-500">{{ $message }}</span>
-                    @enderror
-                </div> --}}
                 <div class="">
                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="category">Elegir Categoría</label>
                     <select name="category_id" id="category"  class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
@@ -115,9 +107,18 @@
 
 
             </script>
-        @push('script')
+        @push('js')
+         <script>
+                    ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+
+        </script>
         @endpush
     </x-slot>
+
 
 
 </x-app-layout>

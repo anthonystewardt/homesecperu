@@ -1,8 +1,23 @@
 @import "ckeditor.css";
+@import "style.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+body {
+    /* sweet emotion links */
+
+    scroll-behavior: small;
+}
+
 [x-cloak] {
     display: none;
+}
+
+.image_thanks {
+    height: 200px;
+}
+
+.thanks_container {
+    height: 300px;
 }

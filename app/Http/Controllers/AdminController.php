@@ -110,7 +110,6 @@ class AdminController extends Controller
             "image" => "nullable|image"
         ]);
 
-
         $post_image_path = Storage::put("posts", $request->image);
         $post = Post::create([
             "title" => $request->name,
@@ -122,12 +121,7 @@ class AdminController extends Controller
             "published" => $request->published == "on" ? true : false,
             "image" => $post_image_path,
         ]);
-           session()->flash('swal', [
-            "icon" => "success",
-            "title" => "Yehh! Se creó el Post ",
-            "text" => "Se ha creado tu Post correctamente",
-            "footer" => ""
-        ]);
+
 
         session()->flash('swal', [
             "icon" => "success",

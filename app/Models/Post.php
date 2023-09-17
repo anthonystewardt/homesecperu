@@ -47,6 +47,11 @@ class Post extends Model
         );
     }
 
+    protected $casts = [
+        "publised_at" => "datetime",
+        "published" => "boolean",
+    ];
+
     // Relación uno a muchos inversa
     public function user(){
         return $this->belongsTo(User::class);
@@ -69,6 +74,10 @@ class Post extends Model
     # relacion uno a uno polimorfica
     public function images(){
         return $this->morphMany(Image::class, "imageable");
+    }
+
+    public function getRouteKeyName(){
+        return "slug";
     }
 
 }

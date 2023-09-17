@@ -5,11 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Photo extends Model
+class Client extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "path_image",
-        "path_url"
+        "names",
+        "surnames",
+        "email",
+        "phone",
+        "message",
+        "status"
     ];
 }
