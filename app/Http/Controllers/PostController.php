@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;

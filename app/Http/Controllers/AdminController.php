@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 use App\Models\Category;
 use App\Models\Post;
@@ -109,6 +110,9 @@ class AdminController extends Controller
             "category_id" => "required",
             "image" => "nullable|image"
         ]);
+
+        // $uploadedImage = Cloudinary::upload($request->file('image')->getRealPath());
+        // dd($uploadedImage);
 
         $post_image_path = Storage::put("posts", $request->image);
         $post = Post::create([
